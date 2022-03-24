@@ -2,6 +2,15 @@
 
 Simple menu system for React
 
+## How it works
+
+The menu system is composed of three elements:
+`<Menu />`, `<Menu.Option />`, and `<Menu.Separator />`
+
+* The `Menu` component contains all of the other menu elements.
+* The `Menu.Option` component is a menu element within the menu system.  It can have as many child `Menu.Option` components as you'd like, including options within options as deep as you want.
+* The `Menu.Separator` is a simple menu separator line to separate elements within a menu options group
+
 ## Properties
 
 ### Menu Component
