@@ -37,7 +37,6 @@ import Menu from "./";
 export default function MenuSystem() {
     return(
         <Menu animate={true}>
-
             <Menu.Option
             title="File"
             >
@@ -47,12 +46,9 @@ export default function MenuSystem() {
                 <Menu.Option title="Save" />
                 <Menu.Option title="Save as..." />
                 <Menu.Option title="Exit" />
-                
-
             </Menu.Option>
 
-            <Menu.Option title="Edit" >
-                
+            <Menu.Option title="Edit" >       
                 <Menu.Option
                 title="Some Edit here"
                 onClick={()=>{console.log("Clicked the 'some edit here' menu element or something.")}}
@@ -74,7 +70,7 @@ export default function MenuSystem() {
                 >
                 </Menu.Option>
             </Menu.Option>
-
+            
             <Menu.Option
             title="Options"
             >
@@ -84,10 +80,7 @@ export default function MenuSystem() {
                 <Menu.Option title="Save" />
                 <Menu.Option title="Save as..." />
                 <Menu.Option title="New" />
-                
-
             </Menu.Option>
-
         </Menu>
     )
 }
