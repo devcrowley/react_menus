@@ -46,7 +46,7 @@ export default function MenuSystem() {
                 <Menu.Separator />
                 <Menu.Option title="Save" />
                 <Menu.Option title="Save as..." />
-                <Menu.Option title="New" />
+                <Menu.Option title="Exit" />
                 
 
             </Menu.Option>
