@@ -190,7 +190,7 @@ function MenuOption(props) {
 
             {childElements ? 
                 <div 
-                className={(isCollapsed ? style.collapsed : "") + ' ' + `${style.group} ${state.animate ? style.animate : ""}`}
+                className={ concatStyles(style, isCollapsed ? "collapsed" : "", state.animate ? "animate" : "", "group") }
                 >
                     {childElements}
                 </div>
@@ -211,6 +211,25 @@ function MenuSeparator() {
 }
 
 
+// Small pure function for concatenating styles from stylem odules
+function concatStyles(styles) {
+    let concatStyles = "";
+
+    // First argument is always the style definitions so remove it
+    const args = [...arguments];
+    args.splice(0,1);
+
+    args.forEach(style=>{
+        if(!styles[style] || !style) return;
+        concatStyles += styles[style] + ' ';
+    });
+
+    concatStyles = concatStyles.trim();
+
+    return concatStyles;
+}
+
+
 /* ----------------- */
 /*  EVENT HANDLERS   */
 /* ----------------- */
@@ -221,8 +240,7 @@ function MenuSeparator() {
  * @param {menuState} state 
  */
  function outsideClickHandler(evt, state) {
-    // console.log(evt.target, state);
-    if(Array.from(evt.target.classList).includes("__menu_element__") === false) {
+    if(state.domElement && state.domElement.contains(evt.target) === false) {
         state.setIsMenuActive(false);
     }
 }
