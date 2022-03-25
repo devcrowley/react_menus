@@ -6,7 +6,7 @@
 */
 
 import React, { useState, useEffect } from 'react';
-import style from './Menu.module.css';
+import style from './Menu.Module.css';
 
 /**
  * 
@@ -126,10 +126,10 @@ function MenuOption(props) {
 
         // Let's the menu know this was the last main menu element that was hovered over
         if(props.isMainMenu && state && state.isMenuActive) {
-            elem.currentTarget.classList.remove('collapsed');
+            elem.currentTarget.classList.remove(style.collapsed);
 
             // Collapse the last active menu element so only this element is shown
-            if(state.lastFocusedElement) state.lastFocusedElement.classList.add('collapsed');
+            if(state.lastFocusedElement) state.lastFocusedElement.classList.add(style.collapsed);
             
             // Collapse the last expanded menu element, if applicable
             if(state.collapseLast) state.collapseLast(true);
@@ -177,7 +177,7 @@ function MenuOption(props) {
     return (
         <div
         tabIndex={1}
-        className={`${props.className} __menu_element__`}
+        className={`${props.className}`}
         onClick={handleOnClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={()=>{ state.collapseLast = setIsCollapsed; }}
@@ -274,7 +274,6 @@ function outsideMoveHandler(evt, state) {
     }
 
 }
-
 
 // Final Exports attached to the Menu component function
 
